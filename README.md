@@ -1,147 +1,182 @@
-# OpenUI
-
-<p align="center">
-  <img src="./assets/openui.png" width="150" alt="OpenUI" />
+<div class="Box-sc-g0xbh4-0 QkQOb js-snippet-clipboard-copy-unpositioned" data-hpc="true"><article class="markdown-body entry-content container-lg" itemprop="text"><div class="markdown-heading" dir="auto"><h1 tabindex="-1" class="heading-element" dir="auto" _msttexthash="21937123" _msthash="243">打开用户界面</h1><a id="user-content-openui" class="anchor" aria-label="永久链接：OpenUI" href="#openui" _mstaria-label="288002" _msthash="244"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<p align="center" dir="auto">
+  <a target="_blank" rel="noopener noreferrer" href="/wandb/openui/blob/main/assets/openui.png"><img src="/wandb/openui/raw/main/assets/openui.png" width="150" alt="打开用户界面" style="max-width: 100%;" _mstalt="68497" _msthash="245"></a>
 </p>
-
-Building UI components can be a slog.  OpenUI aims to make the process fun, fast, and flexible.  It's also a tool we're using at [W&B](https://wandb.com) to test and prototype our next generation tooling for building powerful applications on top of LLM's.
-
-## Overview
-
-![Demo](./assets/demo.gif)
-
-OpenUI let's you describe UI using your imagination, then see it rendered live.  You can ask for changes and convert HTML to React, Svelte, Web Components, etc.  It's like [v0](https://v0.dev) but open source and not as polished :stuck_out_tongue_closed_eyes:.
-
-## Live Demo
-
-[Try the demo](https://openui.fly.dev)
-
-## Running Locally
-
-OpenUI supports [OpenAI](https://platform.openai.com/api-keys), [Groq](https://console.groq.com/keys), and any model [LiteLLM](https://docs.litellm.ai/docs/) supports such as [Gemini](https://aistudio.google.com/app/apikey) or [Anthropic (Claude)](https://console.anthropic.com/settings/keys).  The following environment variables are optional, but need to be set in your environment for alternative models to work:
-
-- **OpenAI** `OPENAI_API_KEY`
-- **Groq** `GROQ_API_KEY`
-- **Gemini** `GEMINI_API_KEY`
-- **Anthropic** `ANTHROPIC_API_KEY`
-- **Cohere** `COHERE_API_KEY`
-- **Mistral** `MISTRAL_API_KEY`
-- **OpenAI Compatible** `OPENAI_COMPATIBLE_ENDPOINT` and `OPENAI_COMPATIBLE_API_KEY`
-
-For example, if you're running a tool like [localai](https://localai.io/) you can set `OPENAI_COMPATIBLE_ENDPOINT` and optionally `OPENAI_COMPATIBLE_API_KEY` to have the models available listed in the UI's model selector under LiteLLM.
-
-### Ollama
-
-You can also use models available to [Ollama](https://ollama.com).  [Install Ollama](https://ollama.com/download) and pull a model like [Llava](https://ollama.com/library/llava).  If Ollama is not running on http://127.0.0.1:11434, you can set the `OLLAMA_HOST` environment variable to the host and port of your Ollama instance.  For example when running in docker you'll need to point to http://host.docker.internal:11434 as shown below.
-
-### Docker (preferred)
-
-The following command would forward the specified API keys from your shell environment and tell Docker to use the Ollama instance running on your machine.
-
-```bash
-export ANTHROPIC_API_KEY=xxx
+<p dir="auto" _msttexthash="1428533977" _msthash="246">构建 UI 组件可能是一项艰巨的任务。OpenUI 旨在使该过程变得有趣、快速和灵活。这也是我们在<a href="https://wandb.com" rel="nofollow" _istranslated="1">W&amp;B</a>使用的一种工具，用于测试和原型化我们的下一代工具，用于在LLM之上构建强大的应用程序。</p>
+<div class="markdown-heading" dir="auto"><h2 tabindex="-1" class="heading-element" dir="auto" _msttexthash="6290102" _msthash="247">概述</h2><a id="user-content-overview" class="anchor" aria-label="永久链接： 概述" href="#overview" _mstaria-label="375934" _msthash="248"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<p dir="auto"><animated-image data-catalyst=""><a target="_blank" rel="noopener noreferrer" href="/wandb/openui/blob/main/assets/demo.gif" data-target="animated-image.originalLink"><img src="/wandb/openui/raw/main/assets/demo.gif" alt="演示" style="max-width: 100%; display: inline-block;" data-target="animated-image.originalImage" _mstalt="43875" _msthash="249"></a>
+      <span class="AnimatedImagePlayer" data-target="animated-image.player" hidden="" _msthidden="4">
+        <a data-target="animated-image.replacedLink" class="AnimatedImagePlayer-images" href="https://github.com/wandb/openui/blob/main/assets/demo.gif" target="_blank" _msthidden="1">
+          
+        <span data-target="animated-image.imageContainer" _msthidden="1">
+            <img data-target="animated-image.replacedImage" alt="Demo" class="AnimatedImagePlayer-animatedImage" src="https://github.com/wandb/openui/raw/main/assets/demo.gif" _msthidden="A" _mstalt="43875" _msthash="250" style="display: block; opacity: 1;">
+          <canvas class="AnimatedImagePlayer-stillImage" aria-hidden="true" width="807" height="455"></canvas></span></a>
+        <button data-target="animated-image.imageButton" class="AnimatedImagePlayer-images" tabindex="-1" aria-label="Play Demo" hidden="" _msthidden="A" _mstaria-label="109694" _msthash="251"></button>
+        <span class="AnimatedImagePlayer-controls" data-target="animated-image.controls" hidden="" _msthidden="2">
+          <button data-target="animated-image.playButton" class="AnimatedImagePlayer-button" aria-label="Play Demo" _msthidden="A" _mstaria-label="109694" _msthash="252">
+            <svg aria-hidden="true" focusable="false" class="octicon icon-play" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M4 13.5427V2.45734C4 1.82607 4.69692 1.4435 5.2295 1.78241L13.9394 7.32507C14.4334 7.63943 14.4334 8.36057 13.9394 8.67493L5.2295 14.2176C4.69692 14.5565 4 14.1739 4 13.5427Z">
+            </path></svg>
+            <svg aria-hidden="true" focusable="false" class="octicon icon-pause" width="16" height="16" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+              <rect x="4" y="2" width="3" height="12" rx="1"></rect>
+              <rect x="9" y="2" width="3" height="12" rx="1"></rect>
+            </svg>
+          </button>
+          <a data-target="animated-image.openButton" aria-label="Open Demo in new window" class="AnimatedImagePlayer-button" href="https://github.com/wandb/openui/blob/main/assets/demo.gif" target="_blank" _msthidden="A" _mstaria-label="424021" _msthash="253">
+            <svg aria-hidden="true" class="octicon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
+              <path fill-rule="evenodd" d="M10.604 1h4.146a.25.25 0 01.25.25v4.146a.25.25 0 01-.427.177L13.03 4.03 9.28 7.78a.75.75 0 01-1.06-1.06l3.75-3.75-1.543-1.543A.25.25 0 0110.604 1zM3.75 2A1.75 1.75 0 002 3.75v8.5c0 .966.784 1.75 1.75 1.75h8.5A1.75 1.75 0 0014 12.25v-3.5a.75.75 0 00-1.5 0v3.5a.25.25 0 01-.25.25h-8.5a.25.25 0 01-.25-.25v-8.5a.25.25 0 01.25-.25h3.5a.75.75 0 000-1.5h-3.5z"></path>
+            </svg>
+          </a>
+        </span>
+      </span></animated-image></p>
+<p dir="auto" _msttexthash="899343224" _msthash="254">OpenUI 让您用自己的想象力描述 UI，然后实时查看它。您可以要求更改并将 HTML 转换为 React、Svelte、Web Components 等。它就像 <a href="https://v0.dev" rel="nofollow" _istranslated="1">v0</a> 但开源且不那么精致😝。</p>
+<div class="markdown-heading" dir="auto"><h2 tabindex="-1" class="heading-element" dir="auto" _msttexthash="12378808" _msthash="255">现场演示</h2><a id="user-content-live-demo" class="anchor" aria-label="永久链接： Live Demo" href="#live-demo" _mstaria-label="358150" _msthash="256"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<p dir="auto"><a href="https://openui.fly.dev" rel="nofollow" _msttexthash="13738127" _msthash="257">试用演示</a></p>
+<div class="markdown-heading" dir="auto"><h2 tabindex="-1" class="heading-element" dir="auto" _msttexthash="17164316" _msthash="258">在本地运行</h2><a id="user-content-running-locally" class="anchor" aria-label="永久链接：在本地运行" href="#running-locally" _mstaria-label="593411" _msthash="259"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<p dir="auto" _msttexthash="1573130403" _msthash="260">OpenUI 支持 <a href="https://platform.openai.com/api-keys" rel="nofollow" _istranslated="1">OpenAI</a>、<a href="https://console.groq.com/keys" rel="nofollow" _istranslated="1">Groq</a> 以及 <a href="https://docs.litellm.ai/docs/" rel="nofollow" _istranslated="1">LiteLLM</a> 支持的任何模型，例如 <a href="https://aistudio.google.com/app/apikey" rel="nofollow" _istranslated="1">Gemini</a> 或 <a href="https://console.anthropic.com/settings/keys" rel="nofollow" _istranslated="1">Anthropic （Claude）。</a>以下环境变量是可选的，但需要在您的环境中设置这些变量才能使替代模型正常工作：</p>
+<ul dir="auto">
+<li><strong _msttexthash="19294158" _msthash="261">开放人工智能</strong> <code>OPENAI_API_KEY</code></li>
+<li><strong _msttexthash="8253427" _msthash="262">格罗克</strong> <code>GROQ_API_KEY</code></li>
+<li><strong _msttexthash="7218263" _msthash="263">双子座</strong> <code>GEMINI_API_KEY</code></li>
+<li><strong _msttexthash="1834014" _msthash="264">人</strong> <code>ANTHROPIC_API_KEY</code></li>
+<li><strong _msttexthash="5324319" _msthash="265">凝聚</strong> <code>COHERE_API_KEY</code></li>
+<li><strong _msttexthash="15693444" _msthash="266">米斯特拉尔</strong> <code>MISTRAL_API_KEY</code></li>
+<li><font _mstmutation="1" _msttexthash="12085099" _msthash="267"><strong _mstmutation="1" _istranslated="1">OpenAI 兼容</strong>和</font><code>OPENAI_COMPATIBLE_ENDPOINT</code><code>OPENAI_COMPATIBLE_API_KEY</code></li>
+</ul>
+<p dir="auto"><font _mstmutation="1" _msttexthash="551712694" _msthash="268">例如，如果你正在运行像 <a href="https://localai.io/" rel="nofollow" _mstmutation="1" _istranslated="1">localai</a> 这样的工具，你可以设置并选择性地在 LiteLLM 下的 UI 模型选择器中列出可用的模型。</font><code>OPENAI_COMPATIBLE_ENDPOINT</code><code>OPENAI_COMPATIBLE_API_KEY</code></p>
+<div class="markdown-heading" dir="auto"><h3 tabindex="-1" class="heading-element" dir="auto" _msttexthash="9337835" _msthash="269">奥拉马</h3><a id="user-content-ollama" class="anchor" aria-label="永久链接： Ollama" href="#ollama" _mstaria-label="298831" _msthash="270"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<p dir="auto"><font _mstmutation="1" _msttexthash="2226125109" _msthash="271">您还可以使用 <a href="https://ollama.com" rel="nofollow" _mstmutation="1" _istranslated="1">Ollama</a> 可用的模型。<a href="https://ollama.com/download" rel="nofollow" _mstmutation="1" _istranslated="1">安装 Ollama</a> 并拉取一个像 <a href="https://ollama.com/library/llava" rel="nofollow" _mstmutation="1" _istranslated="1">Llava</a> 这样的模型。如果 Ollama 未在 <a href="http://127.0.0.1:11434" rel="nofollow" _mstmutation="1" _istranslated="1">http://127.0.0.1:11434</a> 上运行，则可以将环境变量设置为 Ollama 实例的主机和端口。例如，在 docker 中运行时，您需要指向 <a href="http://host.docker.internal:11434" rel="nofollow" _mstmutation="1" _istranslated="1">http://host.docker.internal:11434</a>，如下所示。</font><code>OLLAMA_HOST</code></p>
+<div class="markdown-heading" dir="auto"><h3 tabindex="-1" class="heading-element" dir="auto" _msttexthash="39035347" _msthash="272">Docker（首选）</h3><a id="user-content-docker-preferred" class="anchor" aria-label="永久链接：Docker（首选）" href="#docker-preferred" _mstaria-label="678145" _msthash="273"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<p dir="auto" _msttexthash="358335718" _msthash="274">以下命令将从您的 shell 环境转发指定的 API 密钥，并告知 Docker 使用您机器上运行的 Ollama 实例。</p>
+<div class="highlight highlight-source-shell notranslate position-relative overflow-auto" dir="auto"><pre><span class="pl-k">export</span> ANTHROPIC_API_KEY=xxx
+<span class="pl-k">export</span> OPENAI_API_KEY=xxx
+docker run --rm --name openui -p 7878:7878 -e OPENAI_API_KEY -e ANTHROPIC_API_KEY -e OLLAMA_HOST=http://host.docker.internal:11434 ghcr.io/wandb/openui</pre><div class="zeroclipboard-container">
+    <clipboard-copy aria-label="Copy" class="ClipboardButton btn btn-invisible js-clipboard-copy m-2 p-0 d-flex flex-justify-center flex-items-center" data-copy-feedback="Copied!" data-tooltip-direction="w" value="export ANTHROPIC_API_KEY=xxx
 export OPENAI_API_KEY=xxx
-docker run --rm --name openui -p 7878:7878 -e OPENAI_API_KEY -e ANTHROPIC_API_KEY -e OLLAMA_HOST=http://host.docker.internal:11434 ghcr.io/wandb/openui
-```
-
-Now you can goto [http://localhost:7878](http://localhost:7878) and generate new UI's!
-
-### From Source / Python
-
-Assuming you have git and [uv](https://github.com/astral-sh/uv) installed:
-
-```bash
-git clone https://github.com/wandb/openui
+docker run --rm --name openui -p 7878:7878 -e OPENAI_API_KEY -e ANTHROPIC_API_KEY -e OLLAMA_HOST=http://host.docker.internal:11434 ghcr.io/wandb/openui" tabindex="0" role="button">
+      <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-copy js-clipboard-copy-icon">
+    <path d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 0 1 0 1.5h-1.5a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-1.5a.75.75 0 0 1 1.5 0v1.5A1.75 1.75 0 0 1 9.25 16h-7.5A1.75 1.75 0 0 1 0 14.25Z"></path><path d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0 1 14.25 11h-7.5A1.75 1.75 0 0 1 5 9.25Zm1.75-.25a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-7.5a.25.25 0 0 0-.25-.25Z"></path>
+</svg>
+      <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-check js-clipboard-check-icon color-fg-success d-none">
+    <path d="M13.78 4.22a.75.75 0 0 1 0 1.06l-7.25 7.25a.75.75 0 0 1-1.06 0L2.22 9.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018L6 10.94l6.72-6.72a.75.75 0 0 1 1.06 0Z"></path>
+</svg>
+    </clipboard-copy>
+  </div></div>
+<p dir="auto" _msttexthash="136405880" _msthash="275">现在，您可以转到 <a href="http://localhost:7878" rel="nofollow" _istranslated="1">http://localhost:7878</a> 并生成新的 UI！</p>
+<div class="markdown-heading" dir="auto"><h3 tabindex="-1" class="heading-element" dir="auto" _msttexthash="4889976" _msthash="276">从源 / Python</h3><a id="user-content-from-source--python" class="anchor" aria-label="永久链接：从源 / Python" href="#from-source--python" _mstaria-label="707629" _msthash="277"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<p dir="auto" _msttexthash="39902278" _msthash="278">假设你安装了 git 和 <a href="https://github.com/astral-sh/uv" _istranslated="1">uv</a>：</p>
+<div class="highlight highlight-source-shell notranslate position-relative overflow-auto" dir="auto"><pre>git clone https://github.com/wandb/openui
+<span class="pl-c1">cd</span> openui/backend
+uv sync --frozen --extra litellm
+<span class="pl-c1">source</span> .venv/bin/activate
+<span class="pl-c"><span class="pl-c">#</span> Set API keys for any LLM's you want to use</span>
+<span class="pl-k">export</span> OPENAI_API_KEY=xxx
+python -m openui</pre><div class="zeroclipboard-container">
+    <clipboard-copy aria-label="Copy" class="ClipboardButton btn btn-invisible js-clipboard-copy m-2 p-0 d-flex flex-justify-center flex-items-center" data-copy-feedback="Copied!" data-tooltip-direction="w" value="git clone https://github.com/wandb/openui
 cd openui/backend
 uv sync --frozen --extra litellm
 source .venv/bin/activate
 # Set API keys for any LLM's you want to use
 export OPENAI_API_KEY=xxx
-python -m openui
-```
-
-## LiteLLM
-
-[LiteLLM](https://docs.litellm.ai/docs/) can be used to connect to basically any LLM service available.  We generate a config automatically based on your environment variables.  You can create your own [proxy config](https://litellm.vercel.app/docs/proxy/configs) to override this behavior.  We look for a custom config in the following locations:
-
-1. `litellm-config.yaml` in the current directory
-2. `/app/litellm-config.yaml` when running in a docker container
-3. An arbitrary path specified by the `OPENUI_LITELLM_CONFIG` environment variable
-
-For example to use a custom config in docker you can run:
-
-```bash
-docker run -n openui -p 7878:7878 -v $(pwd)/litellm-config.yaml:/app/litellm-config.yaml ghcr.io/wandb/openui
-```
-
-To use litellm from source you can run:
-
-```bash
-pip install .[litellm]
+python -m openui" tabindex="0" role="button">
+      <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-copy js-clipboard-copy-icon">
+    <path d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 0 1 0 1.5h-1.5a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-1.5a.75.75 0 0 1 1.5 0v1.5A1.75 1.75 0 0 1 9.25 16h-7.5A1.75 1.75 0 0 1 0 14.25Z"></path><path d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0 1 14.25 11h-7.5A1.75 1.75 0 0 1 5 9.25Zm1.75-.25a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-7.5a.25.25 0 0 0-.25-.25Z"></path>
+</svg>
+      <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-check js-clipboard-check-icon color-fg-success d-none">
+    <path d="M13.78 4.22a.75.75 0 0 1 0 1.06l-7.25 7.25a.75.75 0 0 1-1.06 0L2.22 9.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018L6 10.94l6.72-6.72a.75.75 0 0 1 1.06 0Z"></path>
+</svg>
+    </clipboard-copy>
+  </div></div>
+<div class="markdown-heading" dir="auto"><h2 tabindex="-1" class="heading-element" dir="auto" _msttexthash="80275" _msthash="279">LiteLLM</h2><a id="user-content-litellm" class="anchor" aria-label="永久链接：LiteLLM" href="#litellm" _mstaria-label="308490" _msthash="280"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<p dir="auto" _msttexthash="1249232673" _msthash="281"><a href="https://docs.litellm.ai/docs/" rel="nofollow" _istranslated="1">LiteLLM</a> 基本上可以用来连接到任何可用的 LLM 服务。我们会根据您的环境变量自动生成配置。您可以创建自己的<a href="https://litellm.vercel.app/docs/proxy/configs" rel="nofollow" _istranslated="1">代理配置</a>来覆盖此行为。我们在以下位置查找自定义配置：</p>
+<ol dir="auto">
+<li><code>litellm-config.yaml</code><font _mstmutation="1" _msttexthash="17603300" _msthash="282">在当前目录中</font></li>
+<li><code>/app/litellm-config.yaml</code><font _mstmutation="1" _msttexthash="37611548" _msthash="283">在 Docker 容器中运行时</font></li>
+<li><font _mstmutation="1" _msttexthash="46312747" _msthash="284">环境变量指定的任意路径</font><code>OPENUI_LITELLM_CONFIG</code></li>
+</ol>
+<p dir="auto" _msttexthash="183031498" _msthash="285">例如，要在 docker 中使用自定义配置，您可以运行：</p>
+<div class="highlight highlight-source-shell notranslate position-relative overflow-auto" dir="auto"><pre>docker run -n openui -p 7878:7878 -v <span class="pl-s"><span class="pl-pds">$(</span>pwd<span class="pl-pds">)</span></span>/litellm-config.yaml:/app/litellm-config.yaml ghcr.io/wandb/openui</pre><div class="zeroclipboard-container">
+    <clipboard-copy aria-label="Copy" class="ClipboardButton btn btn-invisible js-clipboard-copy m-2 p-0 d-flex flex-justify-center flex-items-center" data-copy-feedback="Copied!" data-tooltip-direction="w" value="docker run -n openui -p 7878:7878 -v $(pwd)/litellm-config.yaml:/app/litellm-config.yaml ghcr.io/wandb/openui" tabindex="0" role="button">
+      <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-copy js-clipboard-copy-icon">
+    <path d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 0 1 0 1.5h-1.5a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-1.5a.75.75 0 0 1 1.5 0v1.5A1.75 1.75 0 0 1 9.25 16h-7.5A1.75 1.75 0 0 1 0 14.25Z"></path><path d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0 1 14.25 11h-7.5A1.75 1.75 0 0 1 5 9.25Zm1.75-.25a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-7.5a.25.25 0 0 0-.25-.25Z"></path>
+</svg>
+      <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-check js-clipboard-check-icon color-fg-success d-none">
+    <path d="M13.78 4.22a.75.75 0 0 1 0 1.06l-7.25 7.25a.75.75 0 0 1-1.06 0L2.22 9.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018L6 10.94l6.72-6.72a.75.75 0 0 1 1.06 0Z"></path>
+</svg>
+    </clipboard-copy>
+  </div></div>
+<p dir="auto" _msttexthash="93016274" _msthash="286">要从源使用 litellm，您可以运行：</p>
+<div class="highlight highlight-source-shell notranslate position-relative overflow-auto" dir="auto"><pre>pip install .[litellm]
+<span class="pl-k">export</span> ANTHROPIC_API_KEY=xxx
+<span class="pl-k">export</span> OPENAI_COMPATIBLE_ENDPOINT=http://localhost:8080/v1
+python -m openui --litellm</pre><div class="zeroclipboard-container">
+    <clipboard-copy aria-label="Copy" class="ClipboardButton btn btn-invisible js-clipboard-copy m-2 p-0 d-flex flex-justify-center flex-items-center" data-copy-feedback="Copied!" data-tooltip-direction="w" value="pip install .[litellm]
 export ANTHROPIC_API_KEY=xxx
 export OPENAI_COMPATIBLE_ENDPOINT=http://localhost:8080/v1
-python -m openui --litellm
-```
-
-## Groq
-
-To use the super fast [Groq](https://groq.com) models, set `GROQ_API_KEY` to your Groq api key which you can [find here](https://console.groq.com/keys).  To use one of the Groq models, click the settings icon in the nav bar.
-
-### Docker Compose
-
-> **DISCLAIMER:** This is likely going to be very slow.  If you have a GPU you may need to change the tag of the `ollama` container to one that supports it.  If you're running on a Mac, follow the instructions above and run Ollama natively to take advantage of the M1/M2.
-
-From the root directory you can run:
-
-```bash
-docker-compose up -d
-docker exec -it openui-ollama-1 ollama pull llava
-```
-
-If you have your OPENAI_API_KEY set in the environment already, just remove `=xxx` from the `OPENAI_API_KEY` line. You can also replace `llava` in the command above with your open source model of choice *([llava](https://ollama.com/library/llava) is one of the only Ollama models that support images currently)*.  You should now be able to access OpenUI at [http://localhost:7878](http://localhost:7878).
-
-*If you make changes to the frontend or backend, you'll need to run `docker-compose build` to have them reflected in the service.*
-
-## Development
-
-A [dev container](https://github.com/wandb/openui/blob/main/.devcontainer/devcontainer.json) is configured in this repository which is the quickest way to get started.
-
-### Codespace
-
-<img src="./assets/codespace.png" alt="New with options..." width="500" />
-
-Choose more options when creating a Codespace, then select **New with options...**.  Select the US West region if you want a really fast boot time.  You'll also want to configure your OPENAI_API_KEY secret or just set it to `xxx` if you want to try Ollama *(you'll want at least 16GB of Ram)*.
-
-Once inside the code space you can run the server in one terminal: `python -m openui --dev`.  Then in a new terminal:
-
-```bash
-cd /workspaces/openui/frontend
-npm run dev
-```
-
-This should open another service on port 5173, that's the service you'll want to visit.  All changes to both the frontend and backend will automatically be reloaded and reflected in your browser.
-
-### Ollama
-
-The codespace installs ollama automaticaly and downloads the `llava` model.  You can verify Ollama is running with `ollama list` if that fails, open a new terminal and run `ollama serve`.  In Codespaces we pull llava on boot so you should see it in the list.  You can select Ollama models from the settings gear icon in the upper left corner of the application.  Any models you pull i.e. `ollama pull llama` will show up in the settings modal.
-
-<img src="./assets/ollama.png" width="500" alt="Select Ollama models" />
-
-### Gitpod
-
-You can easily use Open UI via Gitpod, preconfigured with Open AI.
-
-[![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/wandb/openui)
-
-On launch Open UI is automatically installed and launched.
-
-Before you can use Gitpod:
-
-* Make sure you have a Gitpod account.
-* To use Open AI models set up the `OPENAI_API_KEY` environment variable in your Gitpod [User Account](https://gitpod.io/user/variables). Set the scope to `wandb/openui` (or your repo if you forked it).
-
-> NOTE: Other (local) models might also be used with a bigger Gitpod instance type. Required models are not preconfigured in Gitpod but can easily be added as documented above.
-
-### Resources
-
-See the readmes in the [frontend](./frontend/README.md) and [backend](./backend/README.md) directories.
+python -m openui --litellm" tabindex="0" role="button">
+      <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-copy js-clipboard-copy-icon">
+    <path d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 0 1 0 1.5h-1.5a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-1.5a.75.75 0 0 1 1.5 0v1.5A1.75 1.75 0 0 1 9.25 16h-7.5A1.75 1.75 0 0 1 0 14.25Z"></path><path d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0 1 14.25 11h-7.5A1.75 1.75 0 0 1 5 9.25Zm1.75-.25a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-7.5a.25.25 0 0 0-.25-.25Z"></path>
+</svg>
+      <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-check js-clipboard-check-icon color-fg-success d-none">
+    <path d="M13.78 4.22a.75.75 0 0 1 0 1.06l-7.25 7.25a.75.75 0 0 1-1.06 0L2.22 9.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018L6 10.94l6.72-6.72a.75.75 0 0 1 1.06 0Z"></path>
+</svg>
+    </clipboard-copy>
+  </div></div>
+<div class="markdown-heading" dir="auto"><h2 tabindex="-1" class="heading-element" dir="auto" _msttexthash="8253427" _msthash="287">格罗克</h2><a id="user-content-groq" class="anchor" aria-label="永久链接：Groq" href="#groq" _mstaria-label="245869" _msthash="288"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<p dir="auto"><font _mstmutation="1" _msttexthash="818761788" _msthash="289">要使用超快的 <a href="https://groq.com" rel="nofollow" _mstmutation="1" _istranslated="1">Groq</a> 模型，请设置为您的 Groq api 密钥，您可以<a href="https://console.groq.com/keys" rel="nofollow" _mstmutation="1" _istranslated="1">在此处找到</a>该密钥。要使用其中一个 Groq 模型，请单击导航栏中的设置图标。</font><code>GROQ_API_KEY</code></p>
+<div class="markdown-heading" dir="auto"><h3 tabindex="-1" class="heading-element" dir="auto" _msttexthash="227916" _msthash="290">Docker Compose</h3><a id="user-content-docker-compose" class="anchor" aria-label="永久链接：Docker Compose" href="#docker-compose" _mstaria-label="547001" _msthash="291"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<blockquote>
+<p dir="auto"><font _mstmutation="1" _msttexthash="982637136" _msthash="292"><strong _mstmutation="1" _istranslated="1">免責聲明：</strong>这可能会非常缓慢。如果您有 GPU，则可能需要将容器的标签更改为支持它的标签。如果您在 Mac 上运行，请按照上述说明在本地运行 Ollama 以利用 M1/M2。</font><code>ollama</code></p>
+</blockquote>
+<p dir="auto" _msttexthash="60718749" _msthash="293">从根目录，您可以运行：</p>
+<div class="highlight highlight-source-shell notranslate position-relative overflow-auto" dir="auto"><pre>docker-compose up -d
+docker <span class="pl-c1">exec</span> -it openui-ollama-1 ollama pull llava</pre><div class="zeroclipboard-container">
+    <clipboard-copy aria-label="Copy" class="ClipboardButton btn btn-invisible js-clipboard-copy m-2 p-0 d-flex flex-justify-center flex-items-center" data-copy-feedback="Copied!" data-tooltip-direction="w" value="docker-compose up -d
+docker exec -it openui-ollama-1 ollama pull llava" tabindex="0" role="button">
+      <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-copy js-clipboard-copy-icon">
+    <path d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 0 1 0 1.5h-1.5a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-1.5a.75.75 0 0 1 1.5 0v1.5A1.75 1.75 0 0 1 9.25 16h-7.5A1.75 1.75 0 0 1 0 14.25Z"></path><path d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0 1 14.25 11h-7.5A1.75 1.75 0 0 1 5 9.25Zm1.75-.25a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-7.5a.25.25 0 0 0-.25-.25Z"></path>
+</svg>
+      <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-check js-clipboard-check-icon color-fg-success d-none">
+    <path d="M13.78 4.22a.75.75 0 0 1 0 1.06l-7.25 7.25a.75.75 0 0 1-1.06 0L2.22 9.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018L6 10.94l6.72-6.72a.75.75 0 0 1 1.06 0Z"></path>
+</svg>
+    </clipboard-copy>
+  </div></div>
+<p dir="auto"><font _mstmutation="1" _msttexthash="1518970999" _msthash="294">如果您已经在环境中设置了OPENAI_API_KEY，只需从行中删除即可。您还可以在上面的命令中替换为您选择的开源模型<em _mstmutation="1" _istranslated="1">（<a href="https://ollama.com/library/llava" rel="nofollow" _istranslated="1">llava</a> 是目前唯一支持图像的 Ollama 模型之一）。</em>您现在应该能够在 <a href="http://localhost:7878" rel="nofollow" _mstmutation="1" _istranslated="1">http://localhost:7878</a> 访问 OpenUI。</font><code>=xxx</code><code>OPENAI_API_KEY</code><code>llava</code></p>
+<p dir="auto"><em _msttexthash="264451421" _msthash="295">如果您对前端或后端进行更改，则需要运行 <code _istranslated="1">docker-compose build</code> 以使其反映在服务中。</em></p>
+<div class="markdown-heading" dir="auto"><h2 tabindex="-1" class="heading-element" dir="auto" _msttexthash="4410835" _msthash="296">发展</h2><a id="user-content-development" class="anchor" aria-label="永久链接： 开发" href="#development" _mstaria-label="480220" _msthash="297"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<p dir="auto" _msttexthash="157671579" _msthash="298">在此存储库中配置了开发<a href="https://github.com/wandb/openui/blob/main/.devcontainer/devcontainer.json" _istranslated="1">容器</a>，这是最快的入门方式。</p>
+<div class="markdown-heading" dir="auto"><h3 tabindex="-1" class="heading-element" dir="auto" _msttexthash="13691587" _msthash="299">代码空间</h3><a id="user-content-codespace" class="anchor" aria-label="永久链接：代码空间" href="#codespace" _mstaria-label="394589" _msthash="300"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<p dir="auto"><a target="_blank" rel="noopener noreferrer" href="/wandb/openui/blob/main/assets/codespace.png"><img src="/wandb/openui/raw/main/assets/codespace.png" alt="新选项..." width="500" style="max-width: 100%;" _mstalt="309569" _msthash="301"></a></p>
+<p dir="auto"><font _mstmutation="1" _msttexthash="2258791106" _msthash="302">创建 Codespace 时选择更多选项，然后选择 <strong _mstmutation="1" _istranslated="1">New with options...</strong>。如果您想要真正快速的启动时间，请选择 US West 区域。您还需要配置您的 OPENAI_API_KEY 密钥，或者如果您想尝试 Ollama，只需将其设置为<em _mstmutation="1" _istranslated="1">（您需要至少 16GB 的 Ram）。</em></font><code>xxx</code></p>
+<p dir="auto"><font _mstmutation="1" _msttexthash="275775890" _msthash="303">进入代码空间后，您可以在一个终端中运行服务器： .然后在新终端中：</font><code>python -m openui --dev</code></p>
+<div class="highlight highlight-source-shell notranslate position-relative overflow-auto" dir="auto"><pre><span class="pl-c1">cd</span> /workspaces/openui/frontend
+npm run dev</pre><div class="zeroclipboard-container">
+    <clipboard-copy aria-label="Copy" class="ClipboardButton btn btn-invisible js-clipboard-copy m-2 p-0 d-flex flex-justify-center flex-items-center" data-copy-feedback="Copied!" data-tooltip-direction="w" value="cd /workspaces/openui/frontend
+npm run dev" tabindex="0" role="button">
+      <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-copy js-clipboard-copy-icon">
+    <path d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 0 1 0 1.5h-1.5a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-1.5a.75.75 0 0 1 1.5 0v1.5A1.75 1.75 0 0 1 9.25 16h-7.5A1.75 1.75 0 0 1 0 14.25Z"></path><path d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0 1 14.25 11h-7.5A1.75 1.75 0 0 1 5 9.25Zm1.75-.25a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-7.5a.25.25 0 0 0-.25-.25Z"></path>
+</svg>
+      <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-check js-clipboard-check-icon color-fg-success d-none">
+    <path d="M13.78 4.22a.75.75 0 0 1 0 1.06l-7.25 7.25a.75.75 0 0 1-1.06 0L2.22 9.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018L6 10.94l6.72-6.72a.75.75 0 0 1 1.06 0Z"></path>
+</svg>
+    </clipboard-copy>
+  </div></div>
+<p dir="auto" _msttexthash="737402029" _msthash="304">这应该会在端口 5173 上打开另一个服务，这是您要访问的服务。对前端和后端的所有更改都将自动重新加载并反映在您的浏览器中。</p>
+<div class="markdown-heading" dir="auto"><h3 tabindex="-1" class="heading-element" dir="auto" _msttexthash="9337835" _msthash="305">奥拉马</h3><a id="user-content-ollama-1" class="anchor" aria-label="永久链接： Ollama" href="#ollama-1" _mstaria-label="298831" _msthash="306"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<p dir="auto"><font _mstmutation="1" _msttexthash="3841854354" _msthash="307">codespace 会自动安装 ollama 并下载模型。如果失败，您可以验证 Ollama 是否正在运行，请打开一个新终端并运行 。在 Codespaces 中，我们在启动时拉取 llava，因此您应该会在列表中看到它。您可以从应用程序左上角的设置齿轮图标中选择 Ollama 模型。您提取的任何模型，即 将显示在 Settings （设置） 模式中。</font><code>llava</code><code>ollama list</code><code>ollama serve</code><code>ollama pull llama</code></p>
+<p dir="auto"><a target="_blank" rel="noopener noreferrer" href="/wandb/openui/blob/main/assets/ollama.png"><img src="/wandb/openui/raw/main/assets/ollama.png" width="500" alt="选择 Ollama 型号" style="max-width: 100%;" _mstalt="377247" _msthash="308"></a></p>
+<div class="markdown-heading" dir="auto"><h3 tabindex="-1" class="heading-element" dir="auto" _msttexthash="5204446" _msthash="309">Gitpod 的</h3><a id="user-content-gitpod" class="anchor" aria-label="永久链接： Gitpod" href="#gitpod" _mstaria-label="303641" _msthash="310"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<p dir="auto" _msttexthash="137477613" _msthash="311">您可以通过 Gitpod 轻松使用 Open UI，它预配置了 Open AI。</p>
+<p dir="auto"><a href="https://gitpod.io/#https://github.com/wandb/openui" rel="nofollow"><img src="https://camo.githubusercontent.com/b04f5659467d23b5109ba935a40c00decd264eea25c22d50a118021349eea94f/68747470733a2f2f676974706f642e696f2f627574746f6e2f6f70656e2d696e2d676974706f642e737667" alt="在 Gitpod 中打开" data-canonical-src="https://gitpod.io/button/open-in-gitpod.svg" style="max-width: 100%;" _mstalt="202085" _msthash="312"></a></p>
+<p dir="auto" _msttexthash="72892534" _msthash="313">启动时，Open UI 会自动安装并启动。</p>
+<p dir="auto" _msttexthash="31863728" _msthash="314">在使用 Gitpod 之前：</p>
+<ul dir="auto">
+<li _msttexthash="30047381" _msthash="315">确保您拥有 Gitpod 帐户。</li>
+<li><font _mstmutation="1" _msttexthash="587156973" _msthash="316">要使用 Open AI 模型，请在您的 Gitpod <a href="https://gitpod.io/user/variables" rel="nofollow" _mstmutation="1" _istranslated="1">用户帐户</a>中设置环境变量。将 scope 设置为 （或您的 repo，如果您已 fork 它）。</font><code>OPENAI_API_KEY</code><code>wandb/openui</code></li>
+</ul>
+<blockquote>
+<p dir="auto" _msttexthash="778614577" _msthash="317">注意：其他（本地）模型也可以与更大的 Gitpod 实例类型一起使用。所需的模型没有在 Gitpod 中预配置，但可以按照上面说明轻松添加。</p>
+</blockquote>
+<div class="markdown-heading" dir="auto"><h3 tabindex="-1" class="heading-element" dir="auto" _msttexthash="6234540" _msthash="318">资源</h3><a id="user-content-resources" class="anchor" aria-label="永久链接： 资源" href="#resources" _mstaria-label="408759" _msthash="319"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<p dir="auto" _msttexthash="105720420" _msthash="320">请参阅 <a href="/wandb/openui/blob/main/frontend/README.md" _istranslated="1">frontend</a> 和 <a href="/wandb/openui/blob/main/backend/README.md" _istranslated="1">backend</a> 目录中的自述文件。</p>
+</article></div>

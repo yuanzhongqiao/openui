@@ -4,31 +4,8 @@
 </p>
 <p dir="auto" _msttexthash="1428533977" _msthash="246">构建 UI 组件可能是一项艰巨的任务。OpenUI 旨在使该过程变得有趣、快速和灵活。这也是我们在<a href="https://wandb.com" rel="nofollow" _istranslated="1">W&amp;B</a>使用的一种工具，用于测试和原型化我们的下一代工具，用于在LLM之上构建强大的应用程序。</p>
 <div class="markdown-heading" dir="auto"><h2 tabindex="-1" class="heading-element" dir="auto" _msttexthash="6290102" _msthash="247">概述</h2><a id="user-content-overview" class="anchor" aria-label="永久链接： 概述" href="#overview" _mstaria-label="375934" _msthash="248"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
-<p dir="auto"><animated-image data-catalyst=""><a target="_blank" rel="noopener noreferrer" href="/wandb/openui/blob/main/assets/demo.gif" data-target="animated-image.originalLink"><img src="/wandb/openui/raw/main/assets/demo.gif" alt="演示" style="max-width: 100%; display: inline-block;" data-target="animated-image.originalImage" _mstalt="43875" _msthash="249"></a>
-      <span class="AnimatedImagePlayer" data-target="animated-image.player" hidden="" _msthidden="4">
-        <a data-target="animated-image.replacedLink" class="AnimatedImagePlayer-images" href="https://github.com/wandb/openui/blob/main/assets/demo.gif" target="_blank" _msthidden="1">
-          
-        <span data-target="animated-image.imageContainer" _msthidden="1">
-            <img data-target="animated-image.replacedImage" alt="Demo" class="AnimatedImagePlayer-animatedImage" src="https://github.com/wandb/openui/raw/main/assets/demo.gif" _msthidden="A" _mstalt="43875" _msthash="250" style="display: block; opacity: 1;">
-          <canvas class="AnimatedImagePlayer-stillImage" aria-hidden="true" width="807" height="455"></canvas></span></a>
-        <button data-target="animated-image.imageButton" class="AnimatedImagePlayer-images" tabindex="-1" aria-label="Play Demo" hidden="" _msthidden="A" _mstaria-label="109694" _msthash="251"></button>
-        <span class="AnimatedImagePlayer-controls" data-target="animated-image.controls" hidden="" _msthidden="2">
-          <button data-target="animated-image.playButton" class="AnimatedImagePlayer-button" aria-label="Play Demo" _msthidden="A" _mstaria-label="109694" _msthash="252">
-            <svg aria-hidden="true" focusable="false" class="octicon icon-play" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M4 13.5427V2.45734C4 1.82607 4.69692 1.4435 5.2295 1.78241L13.9394 7.32507C14.4334 7.63943 14.4334 8.36057 13.9394 8.67493L5.2295 14.2176C4.69692 14.5565 4 14.1739 4 13.5427Z">
-            </path></svg>
-            <svg aria-hidden="true" focusable="false" class="octicon icon-pause" width="16" height="16" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
-              <rect x="4" y="2" width="3" height="12" rx="1"></rect>
-              <rect x="9" y="2" width="3" height="12" rx="1"></rect>
-            </svg>
-          </button>
-          <a data-target="animated-image.openButton" aria-label="Open Demo in new window" class="AnimatedImagePlayer-button" href="https://github.com/wandb/openui/blob/main/assets/demo.gif" target="_blank" _msthidden="A" _mstaria-label="424021" _msthash="253">
-            <svg aria-hidden="true" class="octicon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
-              <path fill-rule="evenodd" d="M10.604 1h4.146a.25.25 0 01.25.25v4.146a.25.25 0 01-.427.177L13.03 4.03 9.28 7.78a.75.75 0 01-1.06-1.06l3.75-3.75-1.543-1.543A.25.25 0 0110.604 1zM3.75 2A1.75 1.75 0 002 3.75v8.5c0 .966.784 1.75 1.75 1.75h8.5A1.75 1.75 0 0014 12.25v-3.5a.75.75 0 00-1.5 0v3.5a.25.25 0 01-.25.25h-8.5a.25.25 0 01-.25-.25v-8.5a.25.25 0 01.25-.25h3.5a.75.75 0 000-1.5h-3.5z"></path>
-            </svg>
-          </a>
-        </span>
-      </span></animated-image></p>
+<p dir="auto"><animated-image data-catalyst=""><a target="_blank" rel="noopener noreferrer" href="https://github.com/wandb/openui/blob/main/assets/demo.gif" data-target="animated-image.originalLink"><img src="https://github.com/wandb/openui/raw/main/assets/demo.gif" alt="演示" style="max-width: 100%; display: inline-block;" data-target="animated-image.originalImage" _mstalt="43875" _msthash="249"></a>
+       
 <p dir="auto" _msttexthash="899343224" _msthash="254">OpenUI 让您用自己的想象力描述 UI，然后实时查看它。您可以要求更改并将 HTML 转换为 React、Svelte、Web Components 等。它就像 <a href="https://v0.dev" rel="nofollow" _istranslated="1">v0</a> 但开源且不那么精致😝。</p>
 <div class="markdown-heading" dir="auto"><h2 tabindex="-1" class="heading-element" dir="auto" _msttexthash="12378808" _msthash="255">现场演示</h2><a id="user-content-live-demo" class="anchor" aria-label="永久链接： Live Demo" href="#live-demo" _mstaria-label="358150" _msthash="256"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
 <p dir="auto"><a href="https://openui.fly.dev" rel="nofollow" _msttexthash="13738127" _msthash="257">试用演示</a></p>
